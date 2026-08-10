@@ -3,23 +3,37 @@
 #You can find the available keycodes in /usr/include/linux/input-event-codes.h
 #If you're not sure which keycode corresponds to which key, you can run 'evtest', select your device and press the corresponding key/button.
 
+# As I have been using `dvorak` as my default koyboard layout, 
+# I need to adjust my perspective of the keys for key remapping.
+# Left side = Right Side
+# QWERTY_LAYOUT_KEY = dvorak_translate(QWERTY_LAYOUT_KEY)
 [remap]
-KEY_CAPSLOCK-KEY_H = ["KEY_LEFTCTRL", "KEY_H"] # Scroll Half Down
-KEY_CAPSLOCK-KEY_Y = ["KEY_LEFTCTRL", "KEY_F"] # Scroll Half Up
-KEY_CAPSLOCK-KEY_RIGHTBRACE = ["KEY_DOWN"] # Trigger arrow Down
-KEY_CAPSLOCK-KEY_LEFTBRACE = ["KEY_UP"] # Trigger arrow Up
-KEY_CAPSLOCK-KEY_DOT = ["KEY_GRAVE"] # Trigger backtick
-KEY_CAPSLOCK-KEY_V = ["KEY_ESC"] # Trigger Escape
-KEY_CAPSLOCK-KEY_S = ["KEY_LEFTCTRL", "KEY_PAGEUP"] # Trigger Ctrl + Page UP
-KEY_CAPSLOCK-KEY_I = ["KEY_LEFTCTRL", "KEY_G"] # Trigger Ctrl + i
-KEY_CAPSLOCK-KEY_O = ["KEY_LEFTCTRL", "KEY_S"] # Trigger Ctrl + o
-KEY_CAPSLOCK-KEY_P = ["KEY_LEFTCTRL", "KEY_R"] # Trigger Ctrl + p
-KEY_CAPSLOCK-KEY_W = ["KEY_LEFTCTRL", "KEY_COMMA"] # Trigger Ctrl + w
+KEY_CAPSLOCK-KEY_H = ["KEY_LEFTCTRL", "KEY_H"]         # Scroll Half Down
+KEY_CAPSLOCK-KEY_Y = ["KEY_LEFTCTRL", "KEY_F"]         # Scroll Half Up
+KEY_CAPSLOCK-KEY_RIGHTBRACE = ["KEY_HOME"]             # Trigger HOME
+KEY_CAPSLOCK-KEY_LEFTBRACE = ["KEY_END"]               # Trigger END
+KEY_CAPSLOCK-KEY_K = ["KEY_DOWN"]                      # Trigger arrow Down
+KEY_CAPSLOCK-KEY_L = ["KEY_UP"]                        # Trigger arrow Up
+KEY_CAPSLOCK-KEY_N = ["KEY_LEFTCTRL", "KEY_LEFT"]      # Trigger move one word left
+KEY_CAPSLOCK-KEY_M = ["KEY_LEFTCTRL", "KEY_RIGHT"]     # Trigger mave one word right
+KEY_CAPSLOCK-KEY_APOSTROPHE = ["KEY_RIGHT"]            # Trigger arrow Right
+KEY_CAPSLOCK-KEY_BACKSLASH = ["KEY_LEFT"]              # Trigger arrow Left
+KEY_CAPSLOCK-KEY_DOT = ["KEY_GRAVE"]                   # Trigger backtick
+KEY_CAPSLOCK-KEY_V = ["KEY_ESC"]                       # Trigger Escape
+KEY_CAPSLOCK-KEY_S = ["KEY_LEFTCTRL", "KEY_PAGEUP"]    # Trigger Ctrl + Page UP
+KEY_CAPSLOCK-KEY_I = ["KEY_LEFTCTRL", "KEY_G"]         # Trigger Ctrl + i
+KEY_CAPSLOCK-KEY_O = ["KEY_LEFTCTRL", "KEY_S"]         # Trigger Ctrl + o
+KEY_CAPSLOCK-KEY_P = ["KEY_LEFTCTRL", "KEY_R"]         # Trigger Ctrl + p
+KEY_CAPSLOCK-KEY_W = ["KEY_LEFTCTRL", "KEY_COMMA"]     # Trigger Ctrl + w
 KEY_CAPSLOCK-KEY_SPACE = ["KEY_LEFTCTRL", "KEY_SPACE"] # Trigger Ctrl + Space
 
 [commands]
-KEY_CAPSLOCK-KEY_J = ["/home/myomin/.config/makima/toggle_workspace_1_and_2.sh"] # Toggle workspace 1 and 2
-KEY_CAPSLOCK-KEY_SEMICOLON = ["/home/myomin/.config/makima/toggle_workspace_3_and_recent.sh"] # Toggle workspace 3
+KEY_CAPSLOCK-KEY_J = [
+  "/home/myomin/.config/makima/toggle_workspace_1_and_2.sh",
+] # Toggle workspace 1 and 2
+KEY_CAPSLOCK-KEY_SEMICOLON = [
+  "/home/myomin/.config/makima/toggle_workspace_3_and_recent.sh",
+] # Toggle workspace 3
 KEY_CAPSLOCK-KEY_COMMA = ["wtype ':w' -k Return"] # Neovim: write file
 
 [settings]
