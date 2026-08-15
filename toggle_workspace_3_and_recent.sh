@@ -3,7 +3,7 @@
 current_workspace=$(hyprctl activeworkspace -j | jq '.id')
 
 if [ "$current_workspace" -eq 3 ]; then
-    hyprctl dispatch workspace previous
+  hyprctl dispatch 'hl.dsp.focus({ workspace = "previous" })'
 else
-    hyprctl dispatch workspace 3
+  hyprctl dispatch 'hl.dsp.focus({ workspace = 3 })'
 fi
