@@ -1,0 +1,18 @@
+[remap]
+KEY_CAPSLOCK-KEY_N = ["KEY_LEFTCTRL", "KEY_LEFT"] # Trigger move one word left
+KEY_CAPSLOCK-KEY_M = ["KEY_LEFTCTRL", "KEY_RIGHT"] # Trigger mave one word right
+KEY_CAPSLOCK-KEY_ENTER = [
+  "KEY_LEFTCTRL",
+  "KEY_BACKSPACE",
+] # Delete previous word
+KEY_CAPSLOCK-KEY_BACKSPACE = ["KEY_LEFTCTRL", "KEY_DELETE"] # Delete next word
+
+[commands]
+KEY_CAPSLOCK-KEY_LEFTSHIFT-KEY_ENTER = [
+  "wtype -M shift -k Home -m shift && sleep 0.1 && wtype -M ctrl -k x -m ctrl",
+  #shift + Home, control + x
+] # Cut text from the cursor back to the start of the line. 
+KEY_CAPSLOCK-KEY_LEFTSHIFT-KEY_BACKSPACE = [
+  "wtype -M shift -k End -m shift && sleep 0.1 && wtype -M ctrl -k x -m ctrl",
+  #shift + End, control + x
+] #Cut text from the cursor forward to the end of the line.
